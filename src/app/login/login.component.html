@@ -1,0 +1,35 @@
+
+
+<section class="login w-75 mx-auto py-5">
+
+    <h2 class="my-4">Login Now</h2>
+    <h3 *ngIf="loginError" class="text-capitalize text-danger my-3">{{loginError}}</h3>
+
+    <form [formGroup]="loginForm" (ngSubmit) = "submitLoginForm(loginForm)" >
+
+        <div class="mb-3">
+            <label class="mb-2" for="email">email:</label>
+            <input formControlName="email" class="form-control mb-1" type="text">
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="myAlert mt-2">
+                <p *ngIf="loginForm.controls.email?.errors?.required">email is required</p>
+                <p *ngIf="loginForm.controls.email?.errors?.email">email format is incorrect</p>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="mb-2" for="password">password:</label>
+            <input formControlName="password" class="form-control mb-1" type="password">
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.dirty" class="myAlert mt-2">
+                <p *ngIf="loginForm.controls.password?.errors?.required">password is required</p>
+                <!-- <p *ngIf="registerForm.controls.last_name?.errors?.minlength">minLength is 3</p> -->
+            </div>
+        </div>
+        <div class="checkbox d-flex align-items-center justify-content-end">
+            <label for="checkbox" class="me-2">Remember me</label>
+            <input (change) = "checkbox($event)" type="checkbox" id="checkbox">
+
+        </div>
+        <button [disabled] = "loginForm.invalid" type="submit" class="btn btn-info mt-3">Login</button>
+
+    </form>
+</section>

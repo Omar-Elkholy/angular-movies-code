@@ -1,0 +1,32 @@
+
+
+<div class="row align-items-center mx-0">
+    <div class="col-md-6 py-4">
+        <div class="image text-center">
+            <img [src]="(movieData.poster_path)? imgPath+movieData.poster_path : imgNotFound" class="mx-auto" alt="">
+
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div>
+            <h2>{{movieData.title ? movieData.title : movieData.original_name}}</h2>
+            <p>{{movieData.tagline}}</p>
+        </div>
+        <div class="genres my-4 d-flex flex-wrap">
+            <span *ngFor="let genre of movieData.genres" class="m-2">{{genre.name}}</span>
+        </div>
+
+        <div class="vote my-4">
+            <p class="my-4">Vote: {{movieData.vote_average}}</p>
+            <p class="my-4">Vote Count: {{movieData.vote_count}}</p>
+            <p class="my-4">Popularity: {{movieData.popularity}}</p>
+            <p class="my-4">release date: {{movieData.release_date}}</p>
+        </div>
+
+        <div class="overview">
+            <p>{{movieData.overview}}</p>
+        </div>
+    </div>
+</div>
+

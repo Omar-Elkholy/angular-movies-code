@@ -1,0 +1,92 @@
+
+
+.social li {
+    font-size: 20px;
+}
+
+ul {
+    margin-bottom: 0;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.toggleIcon {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.toggleIcon a {
+    font-size: 50px;
+}
+
+.logo {
+    font-weight: bolder;
+    font-size: 25px;
+}
+.toggleInfo {
+    color: #000;
+    font-weight: 500;
+    border-radius: 5px;
+    right: 16px;
+    left: 16px;
+    padding: 16px;
+    margin: auto;
+    top: calc(100% - 25px);
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    z-index: 333;
+    animation: animate forwards .3s linear;
+
+}
+
+
+.toggleInfo a {
+    color: #000;
+    display: block;
+    cursor: pointer;
+}
+
+
+.email {
+    font-size: 12px;
+}
+
+.toggleInfo a.active {
+    font-weight: bolder;
+    color: #2199E8;
+}
+
+.search i {
+    font-size: 24px;
+    cursor: pointer;
+    color: #c4c9d6;    
+}
+
+.search input {
+    font-size: 14px;
+    border: none;
+}
+
+@media (max-width: 400px) {
+    .search input {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50px;
+        padding: 8px 12px !important;
+    }
+}
+
+.userInfo {
+    cursor: pointer;
+}
+
+.userInfo img {
+    width: 40px;
+    border-radius: 50%;
+}

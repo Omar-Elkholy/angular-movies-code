@@ -1,0 +1,31 @@
+<section class="container py-3">
+
+
+
+    <div *ngIf="!noSearchResult" class="row mb-5">
+  
+        <div class="col-md-6 col-lg-4">
+          <div class="title w-100 position-relative my-5">
+            <h2 class="mb-0">Searched Movies</h2>
+            <p class="my-3">Here you will find your search results</p>
+          </div>
+        </div>
+  
+        <div *ngFor="let movie of searchedMovies" class="col-6  col-md-3 col-lg-2 text-center mb-2 ">
+          <div [routerLink]="['/moviedetails', 'movie' ,movie.id]" routerLinkActive="router-link-active"  class="movie position-relative">
+            <img [src]="(movie.poster_path)? imgLink+movie.poster_path : imgNotFound" class="w-100" alt="">
+            <h3 class="h6 mt-2">{{movie.title}}</h3>
+            <div class="rating position-absolute end-0 top-0">
+              {{movie.vote_average}}
+            </div>
+          </div>
+        </div>
+  
+       
+    </div>
+
+    <div class="container" *ngIf="noSearchResult">
+        <h2 class="text-danger h1">No Search Results</h2>
+    </div>
+  
+    </section>

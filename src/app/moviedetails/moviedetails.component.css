@@ -1,0 +1,30 @@
+.row {
+    min-height: calc(100vh - 90px);
+    margin-top: 90px;
+}
+
+span {
+    background-color: #24baef;
+    padding: 5px;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+.vote p {
+    color: #FAF9F6;
+    font-weight: 500;
+}
+
+.overview p {
+    color: #949cb0;
+}
+
+img {
+    width: 75%;
+}
+
+@media (max-width: 992px) {
+    img {
+        width: 90%;
+    }
+}

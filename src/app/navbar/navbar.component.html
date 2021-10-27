@@ -1,0 +1,65 @@
+
+
+<nav class=" px-3 py-3 py-sm-4 px-sm-2 fixed-top">
+   <div class="container d-flex align-items-center justify-content-between">
+        <ul class="list-unstyled d-flex">
+            <a class="logo px-2 mt-1"><a routerLink = "/home">NOXE</a></a>
+            <div *ngIf="isLogin" class="search d-flex align-items-center">
+                <i (click) = "toggleSearch()" *ngIf="showSearchIcon" class="shadow-lg fas fa-search mx-3"></i>
+                <input (keyup) = "searchMovies()"  (blur) = "toggleSearch() " 
+                *ngIf="!showSearchIcon" class="form-control py-1 w-75 ms-3" appAutoFocus 
+                [(ngModel)]="searchInput" type="search" placeholder="Search For Movies">
+            </div>
+        </ul>
+       
+
+       
+        <ul class="list-unstyled d-flex align-items-center">
+            
+
+            
+            <div class="social d-none d-lg-flex">
+                <li class="px-2"><a href=""><li class="fab fa-twitter"></li></a></li>
+                <li class="px-2"><a href=""><li class="fab fa-instagram"></li></a></li>
+                <li class="px-2"><a href=""><li class="fab fa-facebook"></li></a></li>
+                <li class="px-2 me-3"><a href=""><li class="fab fa-youtube"></li></a></li>
+            </div>
+
+            <div *ngIf="isLogin" class="userInfo d-none d-sm-block">
+                <img class="me-2" src="assets/images/user.png" alt="">
+                <span class="me-2">{{userName}}</span>
+            </div>
+            
+            <li *ngIf="!isLogin" class="px-2"><a routerLink = "/login">Login</a></li>
+            <li *ngIf="!isLogin" class="px-2"><a routerLink = "/register">Register</a></li>
+
+            <div *ngIf="isLogin" (click) = 'toggle()' class="toggleIcon position-relative d-block d-sm-none">
+                <a>
+                    <i class="fas fa-sort-down"></i>
+                </a>
+            </div>
+            <!-- // Toggle Info -->
+            <div  *ngIf="toggleClicked && isLogin"  class="toggleInfo d-block d-sm-none shadow-lg">
+                <div *ngIf="isLogin" class="img d-flex align-items-center">
+                    <img class="w-25 me-2" src="assets/images/user.png" alt="">
+                    <div>
+                        <span class="userName fw-bolder">{{userName}}</span> <br>
+                        <span class="email">{{userEmail}}</span>
+                    </div>
+                </div>
+                <!-- // After login Toggle -->
+                <div>
+                    <a routerLink= "home" routerLinkActive="active"  class="py-1 mt-2">Trending</a>
+                    <a routerLink= "popular" routerLinkActive="active" class="py-1"> Popular </a>
+                    <a routerLink= "upcoming" routerLinkActive="active" class="py-1"> Upcoming</a>
+                    <a routerLink= "toprated" routerLinkActive="active" class="py-1"> Top Rated</a>
+                    <a (click) = "logout()" *ngIf="isLogin" class="py-1 d-block d-sm-none ">Logout</a>
+                </div>
+
+            </div>
+       
+            <li (click) = "logout()" *ngIf="isLogin" class="px-2 d-none d-sm-block"><a>Logout</a></li>
+        </ul>
+   </div>
+
+</nav>
