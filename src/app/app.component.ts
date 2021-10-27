@@ -11,9 +11,17 @@ import { Router } from '@angular/router';
 
 export class AppComponent {
 
-  constructor(public _Router: Router) {
+  constructor(private _Router: Router) {
       
+  }
 
+  getSmallNavRoutes() {
+    return (
+      this._Router.url == '/home' ||
+      this._Router.url == '/popular' ||
+      this._Router.url == '/upcoming' ||
+      this._Router.url == '/toprated'
+    );
   }
 
 

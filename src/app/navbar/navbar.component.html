@@ -4,7 +4,7 @@
    <div class="container d-flex align-items-center justify-content-between">
         <ul class="list-unstyled d-flex">
             <a class="logo px-2 mt-1"><a routerLink = "/home">NOXE</a></a>
-            <div *ngIf="isLogin" class="search d-flex align-items-center">
+            <div *ngIf="!!isNotFormRoute()" class="search d-flex align-items-center">
                 <i (click) = "toggleSearch()" *ngIf="showSearchIcon" class="shadow-lg fas fa-search mx-3"></i>
                 <input (keyup) = "searchMovies()"  (blur) = "toggleSearch() " 
                 *ngIf="!showSearchIcon" class="form-control py-1 w-75 ms-3" appAutoFocus 
@@ -18,29 +18,29 @@
             
 
             
-            <div class="social d-none d-lg-flex">
+            <div *ngIf="isNotFormRoute()" class="social d-none d-lg-flex">
                 <li class="px-2"><a href=""><li class="fab fa-twitter"></li></a></li>
                 <li class="px-2"><a href=""><li class="fab fa-instagram"></li></a></li>
                 <li class="px-2"><a href=""><li class="fab fa-facebook"></li></a></li>
                 <li class="px-2 me-3"><a href=""><li class="fab fa-youtube"></li></a></li>
             </div>
 
-            <div *ngIf="isLogin" class="userInfo d-none d-sm-block">
+            <div *ngIf="isNotFormRoute()" class="userInfo d-none d-sm-block">
                 <img class="me-2" src="assets/images/user.png" alt="">
                 <span class="me-2">{{userName}}</span>
             </div>
             
-            <li *ngIf="!isLogin" class="px-2"><a routerLink = "/login">Login</a></li>
-            <li *ngIf="!isLogin" class="px-2"><a routerLink = "/register">Register</a></li>
+            <li *ngIf="!isNotFormRoute()" class="px-2"><a routerLink = "/login">Login</a></li>
+            <li *ngIf="!isNotFormRoute()" class="px-2"><a routerLink = "/register">Register</a></li>
 
-            <div *ngIf="isLogin" (click) = 'toggle()' class="toggleIcon position-relative d-block d-sm-none">
+            <div *ngIf="isNotFormRoute()" (click) = 'toggle()' class="toggleIcon position-relative d-block d-sm-none">
                 <a>
                     <i class="fas fa-sort-down"></i>
                 </a>
             </div>
             <!-- // Toggle Info -->
-            <div  *ngIf="toggleClicked && isLogin"  class="toggleInfo d-block d-sm-none shadow-lg">
-                <div *ngIf="isLogin" class="img d-flex align-items-center">
+            <div  *ngIf="toggleClicked && isLogin && isNotFormRoute()"  class="toggleInfo d-block d-sm-none shadow-lg">
+                <div *ngIf="isNotFormRoute()" class="img d-flex align-items-center">
                     <img class="w-25 me-2" src="assets/images/user.png" alt="">
                     <div>
                         <span class="userName fw-bolder">{{userName}}</span> <br>
@@ -58,7 +58,7 @@
 
             </div>
        
-            <li (click) = "logout()" *ngIf="isLogin" class="px-2 d-none d-sm-block"><a>Logout</a></li>
+            <li (click) = "logout()" *ngIf="isNotFormRoute()" class="px-2 d-none d-sm-block"><a>Logout</a></li>
         </ul>
    </div>
 
