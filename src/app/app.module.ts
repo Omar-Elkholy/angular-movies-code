@@ -10,8 +10,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { AboutComponent } from './about/about.component';
-import { ContactsComponent } from './contacts/contacts.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MoviedetailsComponent } from './moviedetails/moviedetails.component';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -28,8 +26,6 @@ import { SearchedmoviesComponent } from './searchedmovies/searchedmovies.compone
     RegisterComponent,
     LoginComponent,
     NotfoundComponent,
-    AboutComponent,
-    ContactsComponent,
     MoviedetailsComponent,
     PopularComponent,
     UpcomingComponent,

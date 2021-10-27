@@ -31,7 +31,7 @@
       <ul>
         <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p, totalItems: 800 }"> ... </li>
       </ul>
-      <pagination-controls (pageChange)="p = $event; displayMovies(p)" nextLabel = {{ngxNext}} previousLabel = {{ngxPrevious}}></pagination-controls>
+      <pagination-controls (pageChange)="p = $event; displayMovies(p)"  nextLabel = {{ngxNext}} previousLabel = {{ngxPrevious}}></pagination-controls>
   </div>
 
   </section>
