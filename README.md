@@ -10,3 +10,5 @@ o Movies Api, search and Pagination.
 
 o User token info & Decoding with JWT.
 
+Check The Link:) https://omar-elkholy.github.io/angular-movies/#/home
+
